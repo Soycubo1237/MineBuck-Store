@@ -1,68 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MineBuck Store</Title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .card:hover {
-      transform: translateY(-4px) scale(1.02);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario del SAME</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f0fdf4, #dcfce7);
+        }
+        .logo {
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-  <div class="max-w-5xl mx-auto p-8">
-    <h1 class="text-4xl font-bold text-center mb-10 text-teal-400">MineBuck Store</h1>
+<body class="min-h-screen py-8 px-4">
+    <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <!-- HEADER -->
+        <div class="bg-emerald-700 text-white py-8 px-10 text-center">
+            <h1 class="text-5xl font-bold tracking-tight">Formulario del SAME</h1>
+            <p class="mt-3 text-emerald-100 text-lg">Servicio de Atención Médica de Emergencias</p>
+        </div>
 
-    <div class="grid md:grid-cols-2 gap-6">
+        <!-- LOGO (imagen en tamaño mediano, justo debajo del título) -->
+        <div class="flex justify-center -mt-8 mb-8">
+            <img src="https://i.imgur.com/PLACEHOLDER-SAME-LOGO.png" 
+                 alt="Logo SAME" 
+                 class="logo w-72 h-auto rounded-full border-8 border-white shadow-xl">
+            <!-- 
+                ★★★★★ INSTRUCTIONS ★★★★★
+                1. Guarda la imagen del logo SAME que te aparece en la cuarta captura (la que dice "SAME" en verde).
+                2. Súbela a https://imgur.com o cualquier hosting gratuito.
+                3. Reemplaza la URL "https://i.imgur.com/PLACEHOLDER-SAME-LOGO.png" con tu enlace.
+                (Si quieres, puedes usar la imagen directamente desde tu PC con una URL local o base64, pero Imgur es más fácil para compartir)
+            -->
+        </div>
 
-      <!-- Rango #1-->
-      <div class="card bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-teal-400/60 transition-all duration-300 transform">
-        <h2 class="text-2xl font-bold mb-2 text-teal-300">🔗 Rango #1</h2>
-        <p class="text-green-300 mb-4">Rango Apolo perma 2$.</p>
-        <a href="https://discord.gg/WYqRkeZqYk" target="_blank" class="inline-block bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-full transition">Comprar</a>
-      </div>
+        <div class="px-10 pb-10">
+            <form id="sameForm" action="https://formsubmit.co/TUEMAIL@EJEMPLO.COM" method="POST" class="space-y-10">
+                
+                <!-- DATOS PERSONALES -->
+                <div class="bg-emerald-50 p-8 rounded-2xl">
+                    <h2 class="text-2xl font-semibold text-emerald-800 mb-6 border-b border-emerald-200 pb-3">Datos Personales</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nombre y Apellido IC</label>
+                            <input type="text" name="nombre_apellido" required
+                                   class="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:border-emerald-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Edad IC y OOC <span class="text-red-500">*</span></label>
+                            <input type="text" name="edad_ic_ooc" required
+                                   class="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:border-emerald-500">
+                        </div>
+                    </div>
 
-      <!-- Rango #2-->
-      <div class="card bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-indigo-400/60 transition-all duration-300 transform">
-        <h2 class="text-2xl font-bold mb-2 text-indigo-300">🔗 Rango #2</h2>
-        <p class="text-red-210 mb-4">Rango Triton permanente 3$.</p>
-        <a href="https://discord.gg/WYqRkeZqYk" target="_blank" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full transition">Comprar</a>
-      </div>
+                    <div class="mt-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Zona horaria / País <span class="text-red-500">*</span></label>
+                        <input type="text" name="zona_horaria" required
+                               class="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:border-emerald-500">
+                    </div>
 
-      <!-- Rango #3-->
-      <div class="card bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-yellow-400/60 transition-all duration-300 transform">
-        <h2 class="text-2xl font-bold mb-2 text-yellow-300">🔗 Rango #3</h2>
-        <p class="text-White-800 mb-4">Rango MineBuck+ permanete 5$.</p>
-        <a href="https://discord.gg/WYqRkeZqYk" target="_blank" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-full transition">Comprar</a>
-      </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">¿Cuántas horas puedes cumplir por semana en SAME? <span class="text-red-500">*</span></label>
+                            <input type="text" name="horas_semana" required
+                                   class="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:border-emerald-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">¿Has pertenecido a otro departamento médico o policial? ¿Por qué te fuiste? <span class="text-red-500">*</span></label>
+                            <textarea name="departamento_anterior" rows="3" required
+                                      class="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:border-emerald-500"></textarea>
+                        </div>
+                    </div>
 
-      <!-- Rango #4 -->
-      <div class="card bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-green-400/60 transition-all duration-300 transform">
-        <h2 class="text-2xl font-bold mb-2 text-green-300">🔗 Rango #4</h2>
-        <p class="text-blue-200 mb-4">Rango Poseidon permanente 7$.</p>
-        <a href="https://discord.gg/WYqRkeZqYk" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full transition">Comprar</a>
-      </div>
+                    <div class="mt-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">¿Por qué quieres formar parte del SAME y qué aportarías al departamento? <span class="text-red-500">*</span></label>
+                        <textarea name="motivacion" rows="5" required
+                                  class="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:border-emerald-500"></textarea>
+                    </div>
+                </div>
 
-      <!-- Rango #5 -->
-      <div class="card bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-green-400/60 transition-all duration-300 transform">
-        <h2 class="text-2xl font-bold mb-2 text-green-300">🔗 Rango #5</h2>
-        <p class="text-Yellow-150 mb-4">Rango Kraken permanente 10$.</p>
-        <a href="https://discord.gg/WYqRkeZqYk" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full transition">Comprar</a>
-      </div>
+                <!-- PREGUNTAS OPERATIVAS -->
+                <div class="space-y-10">
+                    <div>
+                        <label class="block text-xl font-semibold text-gray-800 mb-3">¿Qué harías si llegas a una escena con disparos activos? <span class="text-red-500">*</span></label>
+                        <textarea name="disparos_activos" rows="4" required
+                                  class="w-full px-6 py-4 border border-emerald-200 rounded-2xl focus:outline-none focus:border-emerald-600 text-base"></textarea>
+                    </div>
 
-      <!-- Rango #6 -->
-      <div class="card bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-green-400/60 transition-all duration-300 transform">
-        <h2 class="text-2xl font-bold mb-2 text-green-300">🔗 Rango #6</h2>
-        <p class="text-red-120 mb-4">Rango Kraken+ permanente 13$.</p>
-        <a href="https://discord.gg/WYqRkeZqYk" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full transition">Comprar</a>
-      </div>
-          
-    <div class="text-center mt-10">
-      <p class="text-Green-100">Para comprar un rango dale click en comprar y seras llevado al discord oficial de MineBuck muchas gracias!.</p>
-          <p>© 2025 MineBuck - Todos los derechos reservados</p>
+                    <div>
+                        <label class="block text-xl font-semibold text-gray-800 mb-3">¿Qué haces si la escena no es segura? <span class="text-red-500">*</span></label>
+                        <textarea name="escena_no_segura" rows="4" required
+                                  class="w-full px-6 py-4 border border-emerald-200 rounded-2xl focus:outline-none focus:border-emerald-600 text-base"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xl font-semibold text-gray-800 mb-3">Explica cómo rolearías la atención de un paciente inconsciente paso a paso. <span class="text-red-500">*</span></label>
+                        <textarea name="paciente_inconsciente" rows="6" required
+                                  class="w-full px-6 py-4 border border-emerald-200 rounded-2xl focus:outline-none focus:border-emerald-600 text-base"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xl font-semibold text-gray-800 mb-3">¿Qué harías si un compañero rompe alguna normativa? <span class="text-red-500">*</span></label>
+                        <textarea name="companero_normativa" rows="4" required
+                                  class="w-full px-6 py-4 border border-emerald-200 rounded-2xl focus:outline-none focus:border-emerald-600 text-base"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xl font-semibold text-gray-800 mb-3">¿Qué entiendes por MG, PG y BD? <span class="text-red-500">*</span></label>
+                        <textarea name="mg_pg_bd" rows="4" required
+                                  class="w-full px-6 py-4 border border-emerald-200 rounded-2xl focus:outline-none focus:border-emerald-600 text-base"></textarea>
+                    </div>
+
+                    <!-- ESCENARIO ANTIROL -->
+                    <div class="bg-red-50 border border-red-200 p-8 rounded-3xl">
+                        <h3 class="text-xl font-bold text-red-800 mb-6">ESCENARIO - Identifica las actitudes antirol</h3>
+                        <div class="bg-white p-6 rounded-2xl text-sm leading-relaxed mb-6">
+                            Dos sames van a un llamado en la plaza.<br><br>
+                            Al llegar, un paramédico baja de la ambulancia y escribe:<br>
+                            "/me lo revisa y lo despierta"<br><br>
+                            No verifica pulso ni respiración.<br><br>
+                            Otro miembro dice por radio:<br>
+                            "No hace falta traslado, ya esta bien."<br><br>
+                            Mientras tanto, un civil intenta acercarse y nadie asegura la escena ni mantiene distancia.<br><br>
+                            Uno de los SAME comienza a bromear por chat OOC:<br>
+                            "revivimos rapido asi seguimos patrullando."<br><br>
+                            Después de unos minutos, el paciente se levanta y se va caminando sin más evaluación.
+                        </div>
+                        
+                        <label class="block text-xl font-semibold text-gray-800 mb-3">
+                            Identifica las actitudes antirol en la situación.<br>
+                            Explica por qué son incorrectas.<br>
+                            Describe cómo debería haberse actuado correctamente. 
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <textarea name="antirol" rows="8" required
+                                  class="w-full px-6 py-4 border border-red-200 rounded-2xl focus:outline-none focus:border-red-500 text-base"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xl font-semibold text-gray-800 mb-3">Algo más para agregar?</label>
+                        <textarea name="agregar" rows="4"
+                                  class="w-full px-6 py-4 border border-emerald-200 rounded-2xl focus:outline-none focus:border-emerald-600 text-base"></textarea>
+                    </div>
+                </div>
+
+                <!-- BOTÓN -->
+                <div class="pt-6">
+                    <button type="submit"
+                            class="w-full bg-emerald-600 hover:bg-emerald-700 transition-all text-white font-bold text-xl py-6 rounded-3xl shadow-lg flex items-center justify-center gap-3">
+                        <span>ENVIAR FORMULARIO</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7M5 12h14" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- CAMPOS OCULTOS PARA FORMSPREE (anti-spam y configuración) -->
+                <input type="hidden" name="_subject" value="✅ Nueva postulación al SAME - Respuesta recibida">
+                <input type="hidden" name="_next" value="https://www.google.com/search?q=gracias+por+enviar">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none;"> <!-- honeypot anti-spam -->
+                
+            </form>
+        </div>
+
+        <div class="bg-emerald-900 text-emerald-100 text-center py-6 text-sm">
+            Solo tú recibirás las respuestas en tu correo.<br>
+            Nunca compartas este formulario con nadie más.
+        </div>
     </div>
-  </div>
+
+    <script>
+        // Tailwind script ya cargado
+        document.getElementById('sameForm').addEventListener('submit', function() {
+            // Pequeño mensaje de confirmación visual
+            setTimeout(() => {
+                alert('✅ ¡Formulario enviado correctamente! Solo tú recibirás la respuesta en tu correo.');
+            }, 800);
+        });
+    </script>
 </body>
 </html>
